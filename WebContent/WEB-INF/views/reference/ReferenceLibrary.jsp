@@ -27,6 +27,7 @@
 
 <title>LIBOUTCOMES</title>
 <style>
+li{list-style:none;}
 #programs {
 	position: relative;
 	width: 1200px;
@@ -44,7 +45,7 @@
 	z-index: 101;
 }
 
-.btn {
+.btnn {
 	width: 200px;
 	height: 40px;
 	margin: 5px auto;
@@ -54,7 +55,8 @@
 	line-height: 40px;
 }
 
-#wrap ul li a {
+
+/* #wrap ul li a {
 	display: block;
 	color: gray;
 }
@@ -63,30 +65,53 @@
 	background: #226fbe;
 	color: white;
 }
-
+#wrap ul li a:active {
+	background: #226fbe;
+	color: white;
+} */
+ #wrap ul {
+  list-style: none;
+  margin-left: 0;
+ }
+ #wrap ul > li {
+  display: inline-block;
+ }
+#wrap ul > li > a {
+  color: gray;
+  text-decoration: none;
+  display: block;
+  padding: 5px 10px;
+  background-color: #fff;
+ }
+#wrap ul > li:hover > a,
+#wrap ul > li:focus > a,
+#wrap ul > li:active > a,
+#wrap ul > li.active >a {
+  color:#fff;
+  background-color: #226fbe;
+ }
 #subnav {
 	position: absolute;
-	width: 1100px;
-	height: 300px;
+	width: 1200px;
+	height: 630px;
 	border: 1px solid silver;
 	left: 50%;
-	margin-left: -550px;
+	margin-left: -600px;
 	z-index: 100;
 	top: 110px;
-	padding-top: 50px;
 	box-sizing: border-box;
 	display: none;
-	background: url("assets/img/logic.jpg") center no-repeat;
+	background: url("assets/img/독서교실.png") top no-repeat;
 }
 
 #logic2 {
 	position: absolute;
-	width: 1100px;
-	height: 580px;
+	width: 1200px;
+	height: 630px;
 	border: 1px solid silver;
 	background: url("assets/img/꾸러기열람실.PNG") top no-repeat;
 	left: 50%;
-	margin-left: -550px;
+	margin-left: -600px;
 	z-index: 100;
 	top: 110px;
 	padding-top: 50px;
@@ -96,12 +121,12 @@
 
 #logic3 {
 	position: absolute;
-	width: 1100px;
-	height: 580px;
+	width: 1200px;
+	height: 630px;
 	border: 1px solid silver;
 	background: url("assets/img/어린이독서회.PNG") top no-repeat;
 	left: 50%;
-	margin-left: -550px;
+	margin-left: -600px;
 	z-index: 100;
 	top: 110px;
 	padding-top: 50px;
@@ -129,24 +154,24 @@
 }
 
 #subnav .btn{
-	width: 100px;
-	height: 25px;
+	width: 105px;
+	height: 60px;
 	background: blue;
-	margin-left: 712px;
-	margin-top: 90px;
+	margin-left: 560px;
+	margin-top: 79px;
 	opacity: 0.3;
 	cursor: pointer;
 	box-sizing: border-box;
 }
 #subnav .dropdown-menu{
-	margin-left: 712px;
+	margin-left: 750px;
 }
 #subnav #click2 {
-	width: 100px;
-	height: 25px;
+	width: 105px;
+	height: 60px;
 	background: blue;
-	margin-left: 712px;
-	margin-top: 127px;
+	margin-left: 560px;
+	margin-top: 100px;
 	opacity: 0.3;
 	cursor: pointer;
 	box-sizing: border-box;
@@ -157,6 +182,7 @@
 	height: 400px;
 	left: 50%;
 	margin-left: -600px;
+	margin-top:300px;
 }
 
 #container #chart1 {
@@ -165,6 +191,7 @@
 	position: absolute;
 	z-index: 1;
 	display: none;
+
 }
 
 #container #chart2 {
@@ -195,7 +222,17 @@
 <script type="text/javascript"
 	src="https://www.gstatic.com/charts/loader.js"></script>
 <script>
-	alert("수정중입니다.");
+$(function(){
+	$('#wrap ul > li:first').addClass('active');
+	$('#subnav').show();
+});
+ $(function(){
+  var sBtn = $("ul > li");    //  ul > li 이를 sBtn으로 칭한다. (클릭이벤트는 li에 적용 된다.)
+  sBtn.find("a").click(function(){   // sBtn에 속해 있는  a 찾아 클릭 하면.
+   sBtn.removeClass("active");     // sBtn 속에 (active) 클래스를 삭제 한다.
+   $(this).parent().addClass("active"); // 클릭한 a에 (active)클래스를 넣는다.
+  })
+ })
 </script>
 
 <script type="text/javascript">
@@ -250,10 +287,11 @@
 		/*$("#wrap").mouseenter(function(){
 			$("#subnav").stop().slideDown(400);
 		});
-
+ 
 		$("#subnav").mouseleave(function(){
 			$(this).stop().slideUp(400)
 		});*/
+		$("li:first.selected");
 		$("#btn1").click(function() {
 			$("#subnav").stop().slideDown(400);
 			$('#logic2').hide();
@@ -303,25 +341,26 @@
 		<!-- 내용 -->
 
 		<div id="programs">
+		<center>
 			<div id="wrap">
 				<ul>
-					<li id="btn1" class="btn"><a href="#">성북 독서교실</a></li>
-					<li id="btn2" class="btn"><a href="#">꾸러기 열람실</a></li>
-					<li id="btn3" class="btn"><a href="#">어린이 독서회</a></li>
-					<li id="btn4" class="btn"><a href="#">프로그램4</a></li>
-					<li id="btn5" class="btn"><a href="#">프로그램5</a></li>
-					<li id="btn6" class="btn"><a href="#">프로그램6</a></li>
-					<li id="btn7" class="btn"><a href="#">프로그램7</a></li>
-					<li id="btn8" class="btn"><a href="#">프로그램8</a></li>
-					<li id="btn9" class="btn"><a href="#">프로그램9</a></li>
-					<li id="btn10" class="btn"><a href="#">프로그램10</a></li>
+					<li id="btn1" class="btnn"><a href="#">성북 독서교실</a></li>
+					<li id="btn2" class="btnn"><a href="#">꾸러기 열람실</a></li>
+					<li id="btn3" class="btnn"><a href="#">어린이 독서회</a></li>
+					<li id="btn4" class="btnn"><a href="#">프로그램4</a></li>
+					<li id="btn5" class="btnn"><a href="#">프로그램5</a></li>
+					<li id="btn6" class="btnn"><a href="#">프로그램6</a></li>
+					<li id="btn7" class="btnn"><a href="#">프로그램7</a></li>
+					<li id="btn8" class="btnn"><a href="#">프로그램8</a></li>
+					<li id="btn9" class="btnn"><a href="#">프로그램9</a></li>
+					<li id="btn10" class="btnn"><a href="#">프로그램10</a></li>
 
 					<div id="subnav">
 						<!--<img src="assets/img/logic.JPG"/>  -->
 						<div class="dropdown">
 							<button class="btn btn-primary dropdown-toggle" type="button"
 								data-toggle="dropdown">
-								click <span class="caret"></span>
+								<span class="caret"></span>
 							</button>
 							<ul class="dropdown-menu">
 								<li id="click1_1"><a href="#">서브메뉴1</a></li>
@@ -335,7 +374,7 @@
 					<div id="logic2"></div>
 					<div id="logic3"></div>
 			</div>
-
+		</center>
 		</div>
 		<div id="container">
 			<div id="container_nav">
@@ -347,9 +386,9 @@
 			<div id="chart2_1">도서관 이용 증가</div>
 			</div>
 		</div>
-		<div id="print">
+		<!-- <div id="print">
 			<a href="javascript:window.print()">인쇄하기</a>
-		</div>
+		</div> -->
 		<!-- /.내용 -->
 
 	</div>
