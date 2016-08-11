@@ -28,31 +28,20 @@
 <title>LIBOUTCOMES</title>
 <style>
 li{list-style:none;}
-#programs {
-	position: relative;
-	width: 1200px;
-	height: 450px;
-	left: 50%;
-	margin-left: -600px;
-}
 
-#wrap {
-	position: absolute;
-	width: 1200px;
-	left: 50%;
-	margin-left: -600px;
-	height: 110px;
-	z-index: 101;
+#wrap{
+	position:relative;
+	width:1200px;
+	height:110px;
+	left:50%;
+	margin-left:-600px;
 }
-
-.btnn {
-	width: 200px;
-	height: 40px;
-	margin: 5px auto;
-	margin-left: 32px;
-	float: left;
-	text-align: center;
-	line-height: 40px;
+#wrap>ul>button {
+	width:200px;
+	height:40px;
+	float:left;
+	margin-left:32px;
+	margin-top:10px;
 }
 
 
@@ -82,13 +71,6 @@ li{list-style:none;}
   display: block;
   padding: 5px 10px;
   background-color: #fff;
- }
-#wrap ul > li:hover > a,
-#wrap ul > li:focus > a,
-#wrap ul > li:active > a,
-#wrap ul > li.active >a {
-  color:#fff;
-  background-color: #226fbe;
  }
 #subnav {
 	position: absolute;
@@ -170,7 +152,7 @@ li{list-style:none;}
 	width: 105px;
 	height: 60px;
 	background: blue;
-	margin-left: 560px;
+	margin-left: 830px;
 	margin-top: 100px;
 	opacity: 0.3;
 	cursor: pointer;
@@ -182,7 +164,7 @@ li{list-style:none;}
 	height: 400px;
 	left: 50%;
 	margin-left: -600px;
-	margin-top:300px;
+	margin-top:650px;
 }
 
 #container #chart1 {
@@ -193,7 +175,6 @@ li{list-style:none;}
 	display: none;
 
 }
-
 #container #chart2 {
 	width: 1200px;
 	height: 400px;
@@ -223,16 +204,9 @@ li{list-style:none;}
 	src="https://www.gstatic.com/charts/loader.js"></script>
 <script>
 $(function(){
-	$('#wrap ul > li:first').addClass('active');
+	$('#btn1').addClass('active');
 	$('#subnav').show();
 });
- $(function(){
-  var sBtn = $("ul > li");    //  ul > li 이를 sBtn으로 칭한다. (클릭이벤트는 li에 적용 된다.)
-  sBtn.find("a").click(function(){   // sBtn에 속해 있는  a 찾아 클릭 하면.
-   sBtn.removeClass("active");     // sBtn 속에 (active) 클래스를 삭제 한다.
-   $(this).parent().addClass("active"); // 클릭한 a에 (active)클래스를 넣는다.
-  })
- })
 </script>
 
 <script type="text/javascript">
@@ -340,42 +314,36 @@ $(function(){
 
 		<!-- 내용 -->
 
-		<div id="programs">
-		<center>
 			<div id="wrap">
 				<ul>
-					<li id="btn1" class="btnn"><a href="#">성북 독서교실</a></li>
-					<li id="btn2" class="btnn"><a href="#">꾸러기 열람실</a></li>
-					<li id="btn3" class="btnn"><a href="#">어린이 독서회</a></li>
-					<li id="btn4" class="btnn"><a href="#">프로그램4</a></li>
-					<li id="btn5" class="btnn"><a href="#">프로그램5</a></li>
-					<li id="btn6" class="btnn"><a href="#">프로그램6</a></li>
-					<li id="btn7" class="btnn"><a href="#">프로그램7</a></li>
-					<li id="btn8" class="btnn"><a href="#">프로그램8</a></li>
-					<li id="btn9" class="btnn"><a href="#">프로그램9</a></li>
-					<li id="btn10" class="btnn"><a href="#">프로그램10</a></li>
+					<button id="btn1" class="btn btn-default">독서교실</button>
+					<button id="btn2" class="btn btn-default">꾸러기열람실</button>
+					<button id="btn3" class="btn btn-default">어린이독서회</button>
+					<button id="btn4" class="btn btn-default">프로그램4</button>
+					<button id="btn5" class="btn btn-default">프로그램5</button>
+					<button id="btn6" class="btn btn-default">프로그램6</button>
+					<button id="btn7" class="btn btn-default">프로그램7</button>
+					<button id="btn8" class="btn btn-default">프로그램8</button>
+					<button id="btn9" class="btn btn-default">프로그램9</button>
+					<button id="btn10" class="btn btn-default">프로그램10</button>
 
 					<div id="subnav">
 						<!--<img src="assets/img/logic.JPG"/>  -->
-						<div class="dropdown">
-							<button class="btn btn-primary dropdown-toggle" type="button"
-								data-toggle="dropdown">
-								<span class="caret"></span>
-							</button>
-							<ul class="dropdown-menu">
-								<li id="click1_1"><a href="#">서브메뉴1</a></li>
-								<li id="click1_2"><a href="#">서브메뉴2</a></li>
-								<li id="click1_3"><a href="#">서브메뉴3</a></li>
-							</ul>
-						</div>
+						 <div class="dropdown" id="drop">
+   					 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+   					 <span class="caret"></span></button>
+   					 <ul class="dropdown-menu">
+    					  <li id="click1_1"><a href="#">서브메뉴1</a></li>
+    					  <li id="click1_2"><a href="#">서브메뉴2</a></li>
+    					  <li id="click1_#"><a href="#">서브메뉴3</a></li>
+   					 </ul>
+  					</div>
 						<div id="click2"></div>
 						
 					</div>
 					<div id="logic2"></div>
 					<div id="logic3"></div>
 			</div>
-		</center>
-		</div>
 		<div id="container">
 			<div id="container_nav">
 			<p>표시할 그래프가 없습니다.</p>
@@ -383,7 +351,7 @@ $(function(){
 			<div id="chart2">두번째 그래프</div>
 			<div id="chart3">세번째 그래프</div>
 			
-			<div id="chart2_1">도서관 이용 증가</div>
+			<div id="chart2_1">관련 프로그램 재참여</div>
 			</div>
 		</div>
 		<!-- <div id="print">
