@@ -584,3 +584,177 @@ footer p {
 	font-size: 12px;
 	margin-top: 10px;
 }
+
+/* ReferenceLibrary Style
+****************************************************************/
+#wrap{
+	position:relative;
+	width:1200px;
+	height:110px;
+	left:50%;
+	margin-left:-600px;
+}
+#wrap>ul>button {
+	width:200px;
+	height:40px;
+	float:left;
+	margin-left:32px;
+	margin-top:10px;
+}
+
+
+/* #wrap ul li a {
+	display: block;
+	color: gray;
+}
+
+#wrap ul li a:hover {
+	background: #226fbe;
+	color: white;
+}
+#wrap ul li a:active {
+	background: #226fbe;
+	color: white;
+} */
+ #wrap ul {
+  list-style: none;
+  margin-left: 0;
+ }
+ #wrap ul > li {
+  display: inline-block;
+ }
+#wrap ul > li > a {
+  color: gray;
+  text-decoration: none;
+  display: block;
+  padding: 5px 10px;
+  background-color: #fff;
+ }
+#subnav {
+	position: absolute;
+	width: 1200px;
+	height: 630px;
+	border: 1px solid silver;
+	left: 50%;
+	margin-left: -600px;
+	z-index: 100;
+	top: 110px;
+	box-sizing: border-box;
+	display: none;
+	background: url("../img/독서교실.png") top no-repeat;
+}
+
+#logic2 {
+	position: absolute;
+	width: 1200px;
+	height: 630px;
+	border: 1px solid silver;
+	background: url("../img/꾸러기열람실.PNG") top no-repeat;
+	left: 50%;
+	margin-left: -600px;
+	z-index: 100;
+	top: 110px;
+	padding-top: 50px;
+	box-sizing: border-box;
+	display: none;
+}
+
+#logic3 {
+	position: absolute;
+	width: 1200px;
+	height: 630px;
+	border: 1px solid silver;
+	background: url("../img/어린이독서회.PNG") top no-repeat;
+	left: 50%;
+	margin-left: -600px;
+	z-index: 100;
+	top: 110px;
+	padding-top: 50px;
+	box-sizing: border-box;
+	display: none;
+}
+/*#chart {width:600px; height:400px; margin:0 auto; border:1px solid blue; }*/
+#print {
+	position: fixed;
+	right: 5%;
+	bottom: 5%;
+	width: 65px;
+	height: 30px;
+	background: gray;
+	text-align: center;
+	line-height: 28px;
+}
+
+#print a {
+	color: white;
+}
+
+#print a:hover {
+	color: #FAED7D;
+}
+
+#subnav .btn{
+	width: 105px;
+	height: 60px;
+	background: blue;
+	margin-left: 561px;
+	margin-top: 79px;
+	opacity: 0.3;
+	cursor: pointer;
+	box-sizing: border-box;
+}
+#subnav #dropdown-menu{
+	width:105px;
+	margin-left: 829px;
+	position:absolute;
+	display:none;
+}
+#subnav #click2 {
+	width: 105px;
+	height: 60px;
+	background: blue;
+	margin-left: 830px;
+	margin-top: 100px;
+	opacity: 0.3;
+	cursor: pointer;
+	box-sizing: border-box;
+}
+#container {
+	position: relative;
+	width: 600px;
+	height: 400px;
+	left: 50%;
+	margin-left: -300px;
+	margin-top:650px;
+}
+
+#container #chart1 {
+	width: 600px;
+	height: 400px;
+	position: absolute;
+	z-index: 1;
+	display: none;
+
+}
+#container #chart2 {
+	width: 600px;
+	height: 400px;
+	position: absolute;
+	z-index: 2;
+	display: none;
+}
+#container #chart3 {
+	width: 600px;
+	height: 400px;
+	background-color: yellow;
+	position: absolute;
+	z-index: 2;
+	display: none;
+}
+#container #chart2_1 {
+	width: 600px;
+	height: 400px;
+	position: absolute;
+	z-index: 2;
+	display: none;
+}

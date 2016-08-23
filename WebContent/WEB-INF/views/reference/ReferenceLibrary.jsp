@@ -1,6 +1,6 @@
-﻿<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@page import="java.sql.*"%>
+﻿
+
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -23,182 +23,13 @@
 <script type="text/javascript" src="assets/js/plugins/bootstrap.min.js"></script>
 <script type="text/javascript" src="assets/js/common.js"></script>
 <script type="text/javascript"
-	src="assets/js/reference/referenceLibrary.js"></script>
+	src="assets/js/reference/referenceLibrary.js"></script>	
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
 
 <title>LIBOUTCOMES</title>
 <style>
 li{list-style:none;}
 
-#wrap{
-	position:relative;
-	width:1200px;
-	height:110px;
-	left:50%;
-	margin-left:-600px;
-}
-#wrap>ul>button {
-	width:200px;
-	height:40px;
-	float:left;
-	margin-left:32px;
-	margin-top:10px;
-}
-
-
-/* #wrap ul li a {
-	display: block;
-	color: gray;
-}
-
-#wrap ul li a:hover {
-	background: #226fbe;
-	color: white;
-}
-#wrap ul li a:active {
-	background: #226fbe;
-	color: white;
-} */
- #wrap ul {
-  list-style: none;
-  margin-left: 0;
- }
- #wrap ul > li {
-  display: inline-block;
- }
-#wrap ul > li > a {
-  color: gray;
-  text-decoration: none;
-  display: block;
-  padding: 5px 10px;
-  background-color: #fff;
- }
-#subnav {
-	position: absolute;
-	width: 1200px;
-	height: 630px;
-	border: 1px solid silver;
-	left: 50%;
-	margin-left: -600px;
-	z-index: 100;
-	top: 110px;
-	box-sizing: border-box;
-	display: none;
-	background: url("assets/img/독서교실.png") top no-repeat;
-}
-
-#logic2 {
-	position: absolute;
-	width: 1200px;
-	height: 630px;
-	border: 1px solid silver;
-	background: url("assets/img/꾸러기열람실.PNG") top no-repeat;
-	left: 50%;
-	margin-left: -600px;
-	z-index: 100;
-	top: 110px;
-	padding-top: 50px;
-	box-sizing: border-box;
-	display: none;
-}
-
-#logic3 {
-	position: absolute;
-	width: 1200px;
-	height: 630px;
-	border: 1px solid silver;
-	background: url("assets/img/어린이독서회.PNG") top no-repeat;
-	left: 50%;
-	margin-left: -600px;
-	z-index: 100;
-	top: 110px;
-	padding-top: 50px;
-	box-sizing: border-box;
-	display: none;
-}
-/*#chart {width:600px; height:400px; margin:0 auto; border:1px solid blue; }*/
-#print {
-	position: fixed;
-	right: 5%;
-	bottom: 5%;
-	width: 65px;
-	height: 30px;
-	background: gray;
-	text-align: center;
-	line-height: 28px;
-}
-
-#print a {
-	color: white;
-}
-
-#print a:hover {
-	color: #FAED7D;
-}
-
-#subnav .btn{
-	width: 105px;
-	height: 60px;
-	background: blue;
-	margin-left: 560px;
-	margin-top: 79px;
-	opacity: 0.3;
-	cursor: pointer;
-	box-sizing: border-box;
-}
-#subnav .dropdown-menu{
-	margin-left: 750px;
-}
-#subnav #click2 {
-	width: 105px;
-	height: 60px;
-	background: blue;
-	margin-left: 830px;
-	margin-top: 100px;
-	opacity: 0.3;
-	cursor: pointer;
-	box-sizing: border-box;
-}
-#container {
-	position: relative;
-	width: 1200px;
-	height: 400px;
-	left: 50%;
-	margin-left: -600px;
-	margin-top:650px;
-}
-
-#container #chart1 {
-	width: 1200px;
-	height: 400px;
-	position: absolute;
-	z-index: 1;
-	display: none;
-
-}
-#container #chart2 {
-	width: 1200px;
-	height: 400px;
-	background-color: #6CF;
-	position: absolute;
-	z-index: 2;
-	display: none;
-}
-#container #chart3 {
-	width: 1200px;
-	height: 400px;
-	background-color: yellow;
-	position: absolute;
-	z-index: 2;
-	display: none;
-}
-#container #chart2_1 {
-	width: 1200px;
-	height: 400px;
-	background-color:#EAEAEA;
-	position: absolute;
-	z-index: 2;
-	display: none;
-}
 </style>
 <script type="text/javascript"
 	src="https://www.gstatic.com/charts/loader.js"></script>
@@ -207,9 +38,186 @@ $(function(){
 	$('#btn1').addClass('active');
 	$('#subnav').show();
 });
+//첫번째 그래프
+$(function () {
+    $('#chart1').highcharts({
+        chart: {
+            type: 'column'
+        },
+        title: {
+            text: 'Column chart with negative values'
+        },
+        xAxis: {
+            categories: ['Apples', 'Oranges', 'Pears', 'Grapes', 'Bananas']
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'John',
+            data: [5, 3, 4, 7, 2]
+        }, {
+            name: 'Jane',
+            data: [2, -2, -3, 2, 1]
+        }, {
+            name: 'Joe',
+            data: [3, 4, 4, -2, 5]
+        }]
+    });
+});
+//두번째 그래프
+$(function() {
+	  $('#chart2').highcharts({
+	    chart: {
+	      alignTicks: false
+	    },
+	    title: {
+	      text: '',
+	      x: -20 //center
+	    },
+	    xAxis: {
+	      categories: ['2005', '2006', '2007', '2008', '2009', '2010',
+	        '2011', '2012', '2013', '2014'
+	      ]
+	    },
+	    yAxis: [{ // Primary yAxis
+	      min: 0,
+	      max: 3.6,
+	      gridLineWidth: 0,
+	      tickInterval: 0.4,
+	      labels: {
+	        format: '{value:.1f}',
+	        style: {
+	          color: Highcharts.getOptions().colors[1]
+	        }
+	      },
+	      title: {
+	        text: 'A/B/C/D',
+	        style: {
+	          color: Highcharts.getOptions().colors[1]
+	        }
+	      }
+	    }, { // Secondary yAxis
+	      min: 0,
+	      max: 90.0,
+	      gridLineWidth: 0,
+	      tickInterval: 10.0,
+	      title: {
+	        text: 'E/F',
+	        style: {
+	          color: Highcharts.getOptions().colors[0]
+	        }
+	      },
+	      labels: {
+	        format: '{value:.1f}',
+	        style: {
+	          color: Highcharts.getOptions().colors[0]
+	        }
+	      },
+	      opposite: true
+	    }],
+	    legend: {
+	      layout: 'horizontal',
+	      verticalAlign: 'top',
+	    },
+	    series: [{
+	      name: '샘플1',
+	      yAxis: 1,
+	      data: [60.2, 61.6, 62.0, 61.7, 61.7, 61.9, 61.1, 61.6, 62.7, 61.6]
+	    }, {
+	      name: '샘플2',
+	      yAxis: 0,
+	      data: [1.0, 0.2, 0.1, 0.2, 0.1, 0.1, 0.2, 0.0, 0.0, 0.2]
+	    }, {
+	      name: '샘플3',
+	      yAxis: 0,
+	      data: [0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0]
+	    }, {
+	      name: '샘플4',
+	      yAxis: 0,
+	      data: [1.2, 1.3, 1.0, 0.9, 0.8, 1.1, 1.6, 1.1, 0.9, 0.6]
+	    }, {
+	      name: '총결함',
+	      yAxis: 0,
+	      data: [2.2, 1.5, 1.2, 1.1, 0.9, 1.2, 1.8, 1.1, 0.9, 0.8]
+	    }, {
+	      name: '샘플5',
+	      yAxis: 1,
+	      data: [61.9, 77.2, 69.9, 64.1, 78.6, 70.9, 81.0, 68.0, 67.0, 67.0]
+	    }]
+	  });
+	});
+//세번째 그래프
+
+//관련 프로그램 재참여 차트
+$(function () {
+    $('#chart2_1').highcharts({
+        chart: {
+            type: 'bar'
+        },
+        title: {
+            text: 'Historic World Population by Region'
+        },
+        subtitle: {
+            text: 'Source: <a href="https://en.wikipedia.org/wiki/World_population">Wikipedia.org</a>'
+        },
+        xAxis: {
+            categories: ['Africa', 'America', 'Asia', 'Europe', 'Oceania'],
+            title: {
+                text: null
+            }
+        },
+        yAxis: {
+            min: 0,
+            title: {
+                text: 'Population (millions)',
+                align: 'high'
+            },
+            labels: {
+                overflow: 'justify'
+            }
+        },
+        tooltip: {
+            valueSuffix: ' millions'
+        },
+        plotOptions: {
+            bar: {
+                dataLabels: {
+                    enabled: true
+                }
+            }
+        },
+        legend: {
+            layout: 'vertical',
+            align: 'right',
+            verticalAlign: 'top',
+            x: -40,
+            y: 80,
+            floating: true,
+            borderWidth: 1,
+            backgroundColor: ((Highcharts.theme && Highcharts.theme.legendBackgroundColor) || '#FFFFFF'),
+            shadow: true
+        },
+        credits: {
+            enabled: false
+        },
+        series: [{
+            name: 'Year 1800',
+            data: [107, 31, 635, 203, 2]
+        }, {
+            name: 'Year 1900',
+            data: [133, 156, 947, 408, 6]
+        }, {
+            name: 'Year 2012',
+            data: [1052, 954, 4250, 740, 38]
+        }]
+    });
+});
+
+
 </script>
 
-<script type="text/javascript">
+<!-- <script type="text/javascript">
 	google.charts.load('current', {
 		'packages' : [ 'bar' ]
 	});
@@ -253,7 +261,7 @@ $(function(){
 		var chart = new google.charts.Bar(document.getElementById('chart1'));
 		chart.draw(data, options);
 	};
-</script>
+</script> -->
 </head>
 <script src="js/jquery-1.12.0.min.js"></script>
 <script>
@@ -266,6 +274,9 @@ $(function(){
 			$(this).stop().slideUp(400)
 		});*/
 		$("li:first.selected");
+		$("button").click(function(){
+			$("#btn1").removeClass('active');
+		});
 		$("#btn1").click(function() {
 			$("#subnav").stop().slideDown(400);
 			$('#logic2').hide();
@@ -279,6 +290,7 @@ $(function(){
 			$("#chart2").hide();
 			$("#chart3").hide();
 			$("#chart2_1").hide();
+			
 		});
 		$("#btn3").click(function() {
 			$("#logic3").stop().slideDown(400);
@@ -293,8 +305,10 @@ $(function(){
 </script>
 
 <body>
-	<!-- hedaer -->
-	<%@ include file="../Header.jsp"%>
+<script src="https://code.highcharts.com/highcharts.js"></script>
+<script src="https://code.highcharts.com/modules/exporting.js"></script>
+	<!-- header -->
+	<%@ include file="../Header.jsp" %>
 	<!-- /.header -->
 
 	<!-- contents -->
@@ -332,11 +346,13 @@ $(function(){
 						 <div class="dropdown" id="drop">
    					 <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
    					 <span class="caret"></span></button>
-   					 <ul class="dropdown-menu">
+   					 <div id="dropdown-menu">
+   					 <ul>
     					  <li id="click1_1"><a href="#">서브메뉴1</a></li>
     					  <li id="click1_2"><a href="#">서브메뉴2</a></li>
     					  <li id="click1_#"><a href="#">서브메뉴3</a></li>
    					 </ul>
+   					 </div>
   					</div>
 						<div id="click2"></div>
 						
@@ -370,6 +386,7 @@ $(function(){
 			$("#chart1").stop().toggle(1000);
 			$("#chart2").hide();
 			$("#chart3").hide();
+			$("#chart2_1").hide();
 			$("#container p").hide();
 		});
 
@@ -377,12 +394,14 @@ $(function(){
 			$("#chart2").stop().toggle(1000);
 			$("#chart1").hide();
 			$("#chart3").hide();
+			$("#chart2_1").hide();
 			$("#container p").hide();
 		});
 		$("#click1_3").click(function() {
 			$("#chart3").stop().toggle(1000);
 			$("#chart1").hide();
 			$("#chart2").hide();
+			$("#chart2_1").hide();
 			$("#container p").hide();
 		});
 		$("#click2").click(function() {
@@ -390,6 +409,7 @@ $(function(){
 			$("#chart1").hide();
 			$("#chart2").hide();
 			$("#chart3").hide();
+			$("#dropdown-menu").hide();
 			$("#container p").hide();
 		});
 		$("#print").click(function() {
@@ -397,9 +417,13 @@ $(function(){
 				display : "none"
 			});
 		});
+		$(".btn").click(function() {
+			$("#dropdown-menu").stop().toggle();
+		});
 	</script>
+	
 	<!-- footer -->
-	<%@ include file="../Footer.jsp"%>
+	<%@ include file="../Footer.jsp" %>
 	<!-- /.footer -->
 </body>
 </html>
